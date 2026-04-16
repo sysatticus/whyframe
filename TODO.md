@@ -27,6 +27,7 @@
 
 ## Phase 3: UI / UX (Week 8-10)
 - [x] CLI tool (ask questions, get answers)
+- [x] Interactive setup wizard (`whyframe setup`)
 - [ ] VS Code extension prototype (hover → "why?")
 - [ ] Web dashboard (visualize decision graph)
 - [ ] Slack/Discord bot integration

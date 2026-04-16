@@ -48,6 +48,12 @@ def cmd_ask(args):
     print("Coming in Phase 2-3.")
 
 
+def cmd_setup(args):
+    """Run the interactive setup wizard."""
+    from whyframe.setup import run_setup
+    run_setup()
+
+
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
@@ -70,6 +76,14 @@ def main():
     ask_parser = subparsers.add_parser("ask", help="Ask a question about the codebase")
     ask_parser.add_argument("question", help="Question to ask")
     ask_parser.set_defaults(func=cmd_ask)
+    
+    # Setup command
+    setup_parser = subparsers.add_parser("setup", help="Run interactive setup wizard")
+    setup_parser.set_defaults(func=cmd_setup)
+    
+    # Onboard command (alias for setup)
+    onboard_parser = subparsers.add_parser("onboard", help="Run interactive setup wizard")
+    onboard_parser.set_defaults(func=cmd_setup)
     
     args = parser.parse_args()
     
