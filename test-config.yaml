@@ -1,0 +1,18 @@
+embedding:
+  provider: openai
+  model: "qwen/qwen3-embedding-8b"
+  dimension: 1024
+  base_url: "http://localhost:11434/v1"
+  api_key: "not-needed"
+
+git:
+  max_commit_history: 10000
+  include_diff: false
+  ignored_paths:
+    - ".git"
+    - "__pycache__"
+    - "node_modules"
+    - "*.pyc"
+    - ".venv"
+    - "dist"
+    - "build"

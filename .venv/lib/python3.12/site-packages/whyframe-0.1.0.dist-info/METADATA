@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: whyframe
+Version: 0.1.0
+Summary: Ask your repo why this exists — codebase reasoning via embeddings and graph
+Author-email: sysatticus <sysatticus@users.noreply.github.com>
+License: MIT
+Keywords: ai,codebase,embeddings,graph,reasoning,git
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.0.0
+Requires-Dist: gitpython>=3.1.0
+Requires-Dist: tree-sitter>=0.20.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: tqdm>=4.65.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.31.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+
+# Whyframe
+
+> Ask your repo why this exists — codebase reasoning via embeddings and graph.
+
+## Quick Start
+
+```bash
+# Install
+pip install -e .
+
+# Index a repository
+whyframe index /path/to/repo
+
+# Ask a question
+whyframe ask "Why was this function added?"
+```
+
+## Whyframe
+
+Whyframe helps developers understand the reasoning behind code decisions by:
+
+1. **Indexing** - Parse git history, extract relationships, create embeddings
+2. **Graphing** - Build decision graphs from commits, PRs, and code relationships
+3. **Answering** - Semantic search + graph traversal to explain "why"
+
+## Architecture
+
+- `src/pipeline/` - Embedding and indexing pipeline
+- `src/attribution/` - Decision attribution engine
+- `src/graph/` - Graph database integration
+- `src/api/` - REST API and CLI
+
+## Development
+
+```bash
+# Install dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run linter
+ruff check .
+```
+
+## License
+
+MIT
