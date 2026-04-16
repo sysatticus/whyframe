@@ -48,6 +48,8 @@ class Indexer:
         self.config = config
         self.git_parser = GitParser(config.repo_path)
         self.embedding_pipeline = EmbeddingPipeline(
+            api_key=config.embedding.api_key or None,
+            base_url=config.embedding.base_url or None,
             model=config.embedding.model,
             dimension=config.embedding.dimension,
         )

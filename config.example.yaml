@@ -1,0 +1,63 @@
+# Whyframe Configuration
+
+Copy this to `config.yaml` and adjust:
+
+```yaml
+embedding:
+  # Provider: openai, local, anthropic
+  provider: openai
+  
+  # Model from your API
+  # Options: 
+  #   - openai/text-embedding-3-small (1536 dim)
+  #   - openai/text-embedding-3-large (3072 dim)
+  #   - qwen/qwen3-embedding-8b (1024 dim)
+  #   - mistralai/codestral-embed-2505 (1024 dim)
+  #   - thenlper/gte-large (1024 dim)
+  #   - intfloat/multilingual-e5-large (1024 dim)
+  model: "qwen/qwen3-embedding-8b"
+  
+  # Embedding dimension (auto-detected from model)
+  dimension: 1024
+  
+  # Batch size for embedding
+  batch_size: 100
+
+vector_db:
+  # Provider: pinecone, weaviate, pgvector
+  provider: pinecone
+  api_key: ""
+  environment: "us-west1"
+  index_name: "whyframe"
+
+graph_db:
+  # Provider: neo4j, networkx
+  provider: neo4j
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: ""
+
+git:
+  max_commit_history: 10000
+  include_diff: false
+  ignored_paths:
+    - ".git"
+    - "__pycache__"
+    - "node_modules"
+    - "*.pyc"
+    - ".venv"
+    - "dist"
+    - "build"
+```
+
+## OpenAI-Compatible API Setup
+
+If using a custom OpenAI-compatible endpoint (like Ollama, local LLM server, etc.):
+
+```yaml
+embedding:
+  provider: openai
+  model: "qwen/qwen3-embedding-8b"
+  base_url: "http://localhost:11434/v1"  # Your API endpoint
+  api_key: "not-needed"  # Often not required for local
+```

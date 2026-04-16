@@ -12,6 +12,9 @@ class EmbeddingConfig:
     dimension: int = 1536
     batch_size: int = 100
     cache_dir: Path | None = None
+    # OpenAI-compatible API settings
+    base_url: str = ""  # e.g., "https://api.example.com/v1"
+    api_key: str = ""  # API key for the compatible service
 
 
 @dataclass
