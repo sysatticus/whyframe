@@ -1,17 +1,17 @@
 # Whyframe — Project Roadmap
 
 ## Phase 0: Foundation (Week 1-2)
-- [ ] Finalize architecture doc (data flow, components)
-- [ ] Choose vector DB (Pinecone / Weaviate / pgvector)
-- [ ] Choose embedding model (OpenAI text-embedding-3-small vs local)
-- [ ] Set up dev environment (Python 3.11+, dependencies)
-- [ ] Create project structure (src/, tests/, docs/)
-- [ ] Write unit tests for core modules
+- [x] Finalize architecture doc (data flow, components)
+- [x] Choose vector DB (Pinecone / Weaviate / pgvector)
+- [x] Choose embedding model (OpenAI text-embedding-3-small vs local)
+- [x] Set up dev environment (Python 3.11+, dependencies)
+- [x] Create project structure (src/, tests/, docs/)
+- [x] Write unit tests for core modules
 
 ## Phase 1: Core Pipeline (Week 3-5)
-- [ ] Build git history parser (commit → relationship mapping)
+- [x] Build git history parser (commit → relationship mapping)
+- [x] Build embedding pipeline (code → vectors)
 - [ ] Build file/function parser (AST-based, tree-sitter)
-- [ ] Build embedding pipeline (code → vectors)
 - [ ] Build vector storage (index, search, retrieve)
 - [ ] Build graph DB schema (Neo4j or PostgreSQL + relational)
 - [ ] Connect embeddings to graph relationships
@@ -26,7 +26,7 @@
 - [ ] Add confidence scoring for answers
 
 ## Phase 3: UI / UX (Week 8-10)
-- [ ] CLI tool (ask questions, get answers)
+- [x] CLI tool (ask questions, get answers)
 - [ ] VS Code extension prototype (hover → "why?")
 - [ ] Web dashboard (visualize decision graph)
 - [ ] Slack/Discord bot integration
