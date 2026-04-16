@@ -1,2 +1,0 @@
-[console_scripts]
-whyframe = whyframe.cli:main
